@@ -1,0 +1,194 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color:rgb(247,236,222);
+    --sec-color:rgb(254,194,97);
+}
+::selection{
+    background-color: var(--sec-color);
+    color: black;
+}
+body{
+    background-color: var(--main-color);
+}
+.container .content{
+    text-align: center;
+}
+.container .content h1{
+    font-family:  "Pacifico", cursive;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    position: relative;
+    display: inline-block;
+}
+main .container .content h1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--sec-color);
+    transition: height 350ms;
+    z-index: -1;
+}
+.container .content h1:hover::before {
+    height: 70%;
+}
+a{
+    cursor: pointer;
+}
+
+main .container .content .section{
+    border-top: 2px;
+    border-style: dotted ;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+main .container .content .section h2{
+    font-family:  "Righteous", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    background: linear-gradient(to right, rgb(63, 166, 92), rgb(181, 173, 73));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+main .container .content .form{
+    text-align: left;
+    position: relative;
+}
+
+main .container .content  .form-control:focus{
+    border-color: var(--sec-color) !important; 
+    color: black !important;
+    background-color: white !important;
+    box-shadow: 0 0 8px 5px rgba(220, 53, 69,0.25) !important;
+}
+
+main .container .content  label{
+    font-family: "PT Sans Caption", sans-serif;
+    font-size: 24px;
+    font-weight:600;
+    line-height: 36px;
+    padding: 10px;
+    display: inline-block;
+}
+
+main .container .content .form .btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 8px 75px;
+    background-color: rgb(210,80,44);
+    color: white;
+    transition: all 0.2s;
+    font-size: 25px;
+}
+main .container .content .form .btn:hover{
+    background-color: rgb(191, 72, 39);
+}
+main .container .content .form .btn:focus{
+    background-color: white;
+    color: black;
+    border-color: rgb(210,80,44);
+
+}
+main .container .content .data{
+    margin-top: 130px !important;
+    border-top: 2px;
+    border-style: dotted ;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0 20px; /* horizontal = 0, vertical = 20px */
+}
+
+.btnVisit{
+    background-color: rgb(156,175,58);
+    color: white;
+}
+.btnDelete,
+.btnVisit,
+.btnUpdate{
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.btnDelete{
+    background-color: rgb(235,29,53);
+    color: white;
+
+}
+.btnUpdate{
+    color: white;
+    background-color: rgb(129, 129, 243);
+
+}
+a{
+    text-decoration: none;
+}
+.btnVisit:focus,
+.btnDelete:focus,
+.btnUpdate:focus{
+    background-color: white;
+    color: black;
+    border: 1.5px black solid;
+}
+
+
+.box-info {
+    background-color: #0007;
+}
+.box-conent {
+    width: 500px;
+    z-index: 10;
+}
+.box-conent p {
+    font-family: "Bree Serif", serif;
+    font-size: 21px;
+    line-height: 1.3;
+    color: #352e28;
+}
+
+.rules i {
+    color: #bb4120;
+}
+.circles span {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.circles span:nth-child(1) {
+    background-color: #f15f5d;
+}
+.circles span:nth-child(2) {
+    background-color: #febe2e;
+}
+.circles span:nth-child(3) {
+        background-color: #4db748;
+}
+
+#box-info {
+    position: fixed !important; /* علشان يغطي كل الصفحة */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4); /* خلفية شفافة */
+    z-index: 9999; /* يتأكد إنه فوق كل العناصر */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
