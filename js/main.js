@@ -1,12 +1,15 @@
 var siteNameInput=document.getElementById("siteName");
 var websiteURLInput=document.getElementById("websiteURL");
 var tableContentData=document.getElementById("tableContent");
+var closeBtnn=document.getElementById('closeBtnover');
 
 var add=document.getElementById("add");
 var update=document.getElementById("update");
 
 var searchInput=document.getElementById("search");
 var boxInfo=document.getElementById("box-info");
+
+
 
 
 if(localStorage.getItem('webs')){
@@ -78,6 +81,8 @@ function deleteData(deleteIndex){
 
 }
 
+
+
 var currentUpdateIndex = null;
 function updateform(updateIndex){
 
@@ -99,17 +104,17 @@ function getUpdate(){
         var updatedWeb = {
             name:siteNameInput.value,
             url:websiteURLInput.value,
-    }
-    webList[currentUpdateIndex] = updatedWeb;
-    localStorage.setItem('webs', JSON.stringify(webList));
+        }
+        webList[currentUpdateIndex] = updatedWeb;
+        localStorage.setItem('webs', JSON.stringify(webList));
 
-    cleardata();
+        cleardata();
 
-    disdata(webList);
-    update.classList.add('d-none');
-    add.classList.remove('d-none');
-    currentUpdateIndex = null;
-    boxInfo.classList.add("d-none");
+        disdata(webList);
+        update.classList.add('d-none');
+        add.classList.remove('d-none');
+        currentUpdateIndex = null;
+        boxInfo.classList.add("d-none");
 
     }
     else{
@@ -160,4 +165,10 @@ function validateForm(element) {
     }
 
 }
+
+
+
+    closeBtnn.addEventListener('click', function(){
+        boxInfo.classList.replace('d-flex','d-none');
+    });
 
